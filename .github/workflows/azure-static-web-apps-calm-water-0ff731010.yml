@@ -10,15 +10,16 @@ on:
       - v3.0
 
 jobs:
-  name: Setup .NET Core
+- name: Setup .NET Core
   uses: actions/setup-dotnet@v1
   with:
     dotnet-version: '5.0.x' 
-  name: Deploy Database
+- name: Deploy Database
   working-directory: ./database/deploy
   env: 
     ConnectionString: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}    
   run: dotnet build && dotnet run
+  
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
