@@ -268,5 +268,5 @@ __azurite*
 __blobstorage__/
 
 # Other
-.env
+
 global.json
