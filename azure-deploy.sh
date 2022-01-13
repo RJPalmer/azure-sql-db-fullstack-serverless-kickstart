@@ -15,8 +15,8 @@ location=""
 # Connection string
 azureSQL='Server=tcp:.database.windows.net,1433;Initial Catalog=todo_v3;Persist Security Info=False;User ID=webapp;Password=Super_Str0ng*P4ZZword!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
 
-gitSource="https://github.com/Azure-Samples/azure-sql-db-fullstack-serverless-kickstart"
-gitToken=""
+gitSource="https://github.com/RJPalmer/azure-sql-db-fullstack-serverless-kickstart"
+gitToken="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"
 EOF
 	echo "Enviroment file not detected."
 	echo "Please configure values for your environment in the created .env file"
