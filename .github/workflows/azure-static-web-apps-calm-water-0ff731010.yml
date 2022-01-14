@@ -23,9 +23,16 @@ jobs:
         with:
           dotnet-version: '5.0.x' 
       - name: Deploy Database
+        working-directory: ./database/deploy    
+        run: dotnet build && dotnet run
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.x' 
+      - name: Deploy Database
         working-directory: ./database/deploy
         env: 
-          ConnectionString: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}    
+            ConnectionString: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}    
         run: dotnet build && dotnet run
       - name: Build And Deploy
         id: builddeploy
