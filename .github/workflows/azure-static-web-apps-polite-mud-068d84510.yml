@@ -38,7 +38,7 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/client" # App source code path
           api_location: "/api" # Api source code path - optional
-          output_location: "dist" # Built app content directory - optional
+          output_location: "" # Built app content directory - optional
         env:
             AzureSQL: ${{ secrets.AZURE_API_SQL_CONNECTION_STRING }}
           ###### End of Repository/Build Configurations ######
