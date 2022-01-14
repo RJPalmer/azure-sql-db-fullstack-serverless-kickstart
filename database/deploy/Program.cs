@@ -13,9 +13,10 @@ namespace Todo.Database.Deploy
             DotNetEnv.Env.Load();
 
             // Connection string for deploying the database (high-privileged account as it needs to be able to CREATE/ALTER/DROP)
-            var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
+            var connectionString = Environment.GetEnvironmentVariable ("ConnectionString");
             
             var csb = new SqlConnectionStringBuilder(connectionString);
+            Console.WriteLine(csb.toString());
             Console.WriteLine($"Deploying database: {csb.InitialCatalog}");
 
             Console.WriteLine("Testing connection...");
